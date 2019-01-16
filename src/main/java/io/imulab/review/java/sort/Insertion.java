@@ -16,7 +16,7 @@ package io.imulab.review.java.sort;
 public class Insertion {
 
     static <E extends Comparable<E>> void sort(E[] elements) {
-        for (int i = 1; i < elements.length; i++)
+        for (int i = 0; i < elements.length; i++)
             insert(elements, i);
     }
 
@@ -24,10 +24,8 @@ public class Insertion {
         assert c > 0;
         assert c < elements.length;
 
-        int i = c;
-        while (i > 0 && elements[i-1].compareTo(elements[i]) > 0) {
+        for (int i = c; i > 0 && elements[i-1].compareTo(elements[i]) > 0; i--) {
             Utility.swap(elements, i-1, i);
-            i--;
         }
     }
 
