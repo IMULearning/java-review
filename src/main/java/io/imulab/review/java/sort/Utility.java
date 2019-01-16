@@ -2,7 +2,7 @@ package io.imulab.review.java.sort;
 
 import java.util.concurrent.ThreadLocalRandom;
 
-class Utility {
+public class Utility {
 
     static <E extends Comparable<E>> boolean isSorted(E[] elements) {
         if (elements.length <= 1)
@@ -16,13 +16,13 @@ class Utility {
         return true;
     }
 
-     static void swap(Object[] elements, int i, int j) {
+    public static void swap(Object[] elements, int i, int j) {
         Object temp = elements[i];
         elements[i] = elements[j];
         elements[j] = temp;
     }
 
-    static void printArray(Object[] elements) {
+    public static void printArray(Object[] elements) {
         System.out.print("[");
 
         for (int i = 0; i < elements.length; i++) {
@@ -34,7 +34,7 @@ class Utility {
         System.out.println("]");
     }
 
-    static Integer[] randomIntArray(int size) {
+    public static Integer[] randomIntArray(int size) {
         assert size > 0;
 
         Integer[] array = new Integer[size];
