@@ -1,15 +1,16 @@
 package io.imulab.review.java.sort;
 
 /**
- * Select the minimum item in the remaining array and exchange it with the cursor item.
+ * Left of the cursor is sorted. Right of the cursor is remaining. Select the minimum of the remaining items
+ * and exchange it with the cursor item.
  *
- * O(N^2)
+ * O(N^2), not intelligent about an already sorted array.
  */
 public class Selection {
 
     static <E extends Comparable<E>> void sort(E[] elements) {
         for (int i = 0; i < elements.length; i++) {
-            swap(elements, i, min(elements, i));
+            Utility.swap(elements, i, min(elements, i));
         }
     }
 
@@ -30,12 +31,7 @@ public class Selection {
         return index;
     }
 
-    private static <E extends Comparable<E>> void swap(E[] elements, int i, int j) {
-        E temp = elements[i];
-        elements[i] = elements[j];
-        elements[j] = temp;
-    }
-
+    @SuppressWarnings("Duplicates")
     public static void main(String[] args) {
         Integer[] array = Utility.randomIntArray(32);
 

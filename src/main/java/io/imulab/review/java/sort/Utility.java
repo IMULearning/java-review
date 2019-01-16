@@ -16,6 +16,12 @@ class Utility {
         return true;
     }
 
+     static void swap(Object[] elements, int i, int j) {
+        Object temp = elements[i];
+        elements[i] = elements[j];
+        elements[j] = temp;
+    }
+
     static void printArray(Object[] elements) {
         System.out.print("[");
 
