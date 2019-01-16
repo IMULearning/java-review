@@ -219,7 +219,7 @@ public class RedBlackBST<Key extends Comparable<Key>, Value> implements SymbolTa
         private Value value = null;
         private Node left = null;
         private Node right = null;
-        private boolean color = BLACK;
+        private boolean color = RED;
         private int count = 0;
 
         Node(Key key, Value value) {
