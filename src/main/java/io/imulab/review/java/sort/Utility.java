@@ -16,6 +16,21 @@ public class Utility {
         return true;
     }
 
+    static <E extends Comparable<E>> boolean isSorted(E[] elements, int startInclusive, int endExclusive) {
+        if (elements.length <= 1)
+            return true;
+
+        assert startInclusive >= 0;
+        assert endExclusive <= elements.length;
+
+        for (int i = startInclusive; i + 1 < endExclusive; i++) {
+            if (elements[i].compareTo(elements[i + 1]) > 0)
+                return false;
+        }
+
+        return true;
+    }
+
     public static void swap(Object[] elements, int i, int j) {
         Object temp = elements[i];
         elements[i] = elements[j];
