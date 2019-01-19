@@ -13,7 +13,7 @@ public class Shuffle {
      * @param elements  array to be shuffled.
      * @param <E>       type of array.
      */
-    static <E extends Comparable<E>> void knuthShuffle(E[] elements) {
+    public static <E extends Comparable<E>> void knuthShuffle(E[] elements) {
         for (int i = 1; i < elements.length; i++) {
             int r = ThreadLocalRandom.current().nextInt(0, i);
             Utility.swap(elements, i, r);

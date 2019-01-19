@@ -23,7 +23,7 @@ public class Merge {
             // for every size * 2 segment, perform merge
             for (int low = 0; low + sz < elements.length; low += sz * 2)
                 // do a Math.min on upper bound in case we overflow
-                merge(elements, aux, low, low + sz - 1, Math.min(low + sz * 2 - 1, elements.length - 1));
+                merge(elements, (E[]) aux, low, low + sz - 1, Math.min(low + sz * 2 - 1, elements.length - 1));
     }
 
     /**
