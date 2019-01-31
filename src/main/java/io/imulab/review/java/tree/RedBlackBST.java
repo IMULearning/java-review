@@ -89,7 +89,7 @@ public class RedBlackBST<Key extends Comparable<Key>, Value> implements SymbolTa
             else {
                 Node x = h;
                 h = min(h.right);
-                x.right = delete(x.right, h.key);
+                h.right = delete(x.right, h.key);
                 h.left = x.left;
             }
         }
