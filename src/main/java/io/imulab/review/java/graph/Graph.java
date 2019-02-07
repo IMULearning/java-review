@@ -1,34 +1,43 @@
 package io.imulab.review.java.graph;
 
-public interface Graph {
+public interface Graph<V extends Comparable<V>> {
 
     /**
-     * Add edge between two vertices.
+     * The source of the graph. The source argument on the first addEdge call will be set as source of this graph.
      *
-     * @param v first vertex
-     * @param w second vertex
+     * @return  the source of the graph.
      */
-    void addEdge(int v, int w);
+    V source();
 
     /**
-     * Vertices adjacent to a vertex.
+     * Add an edge between the source vertex and the destination vertex. Direction is left for the implementation
+     * to decide.
      *
-     * @param v vertex to query adjacent vertices with.
-     * @return  iterable collection of adjacent vertices.
+     * @param source    source vertex
+     * @param dest      destination vertex
      */
-    Iterable<Integer> adj(int v);
+    void addEdge(V source, V dest);
 
     /**
-     * Number of vertices.
+     * Returns all adjacent vertices to the vertex.
      *
-     * @return  the total number of vertices.
+     * @param vertex    vertex to query adjacent vertices for.
+     * @return          an iterable of all adjacent vertices.
      */
-    int V();
+    Iterable<V> adj(V vertex);
 
     /**
-     * Number of edges.
-     *
-     * @return  the total number of edges.
+     * @return  the number of edges in the graph.
      */
     int E();
+
+    /**
+     * @return  all vertices in this graph, in an iterable order.
+     */
+    Iterable<V> all();
+
+    /**
+     * @return  the reverse graph of this graph.
+     */
+    Graph<V> reversed();
 }
